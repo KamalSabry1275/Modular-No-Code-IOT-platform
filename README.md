@@ -30,6 +30,8 @@ Welcome to the **IoT Project Management Application** repository! This project p
 
 The **IoT Project Management Application** is a web-based platform that enables users to create, manage, and control IoT projects. It provides features such as module configuration, rule creation, real-time control, and safety settings. The application is designed to be user-friendly, secure, and scalable.
 
+![alt text](image.png)
+
 ## Features
 
 - **Authentication System:** Secure user registration, login, and password management.
@@ -55,12 +57,16 @@ Users can register using:
 
 After registration, users must verify their email by entering a verification code sent to their inbox.
 
+![alt text](image-1.png)
+
 ### Login
 
 Users can log in using:
 
 - **Normal Login:** Enter email and password.
 - **Google OAuth 2.0:** Log in using a Google account.
+
+![alt text](image-2.png)
 
 ### Reset Password
 
@@ -69,6 +75,8 @@ If a user forgets their password, they can reset it by:
 - Entering their email.
 - Verifying their identity with a code sent to their email.
 - Setting a new password.
+
+![alt text](image-3.png)
 
 ### Logout
 
@@ -87,6 +95,8 @@ Users can log out, which clears their session and redirects them to the login pa
 - Users can view their modules in **grid view** or **list view**.
 - Selected view style is saved in local storage for consistency across sessions.
 
+![alt text](image-4.png)
+
 ### Project Page
 
 - Users can **create new projects**.
@@ -94,11 +104,15 @@ Users can log out, which clears their session and redirects them to the login pa
 - Delete projects.
 - Access detailed project views for module and rule management.
 
+![alt text](image-5.png)
+
 ### Edit Project Page
 
 - Allows users to **add, edit, and rearrange modules**.
 - Configure module properties (e.g., pin settings).
 - Save changes to the project.
+
+![alt text](image-6.png)
 
 ### Edit Rule Page
 
@@ -106,24 +120,34 @@ Users can log out, which clears their session and redirects them to the login pa
 - Edit or delete existing rules.
 - Save rule changes.
 
+![alt text](image-7.png)
+
 ### Edit Image Page
 
 - Users can:
+
   - Upload new images (via file upload or camera capture).
   - View and delete existing images.
+
+  ![alt text](image-8.png)
 
 ### Edit Safety Page
 
 - Enable or disable the **camera safety module**.
 - Configure **pin settings** for the camera module.
 
+![alt text](image-9.png)
+
 ### Live Control Page
 
 - Provides **real-time control** and monitoring of IoT modules.
 - Users can:
+
   - Connect or disconnect from the WebSocket server.
   - View and control module states in real-time.
   - Switch between projects to manage different sets of modules.
+
+  ![alt text](image-10.png)
 
 ## Installation
 
