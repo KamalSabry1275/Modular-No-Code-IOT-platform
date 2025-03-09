@@ -64,9 +64,9 @@ Users can log in using:
 
 If a user forgets their password, they can reset it by:
 
-1. Entering their email.
-2. Verifying their identity with a code sent to their email.
-3. Setting a new password.
+- Entering their email.
+- Verifying their identity with a code sent to their email.
+- Setting a new password.
 
 ### Logout
 
