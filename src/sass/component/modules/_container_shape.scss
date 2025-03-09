@@ -1,0 +1,13 @@
+.module {
+  width: 15rem;
+  max-height: 15rem;
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+
+  h2 {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}

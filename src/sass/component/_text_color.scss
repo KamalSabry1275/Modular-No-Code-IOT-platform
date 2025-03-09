@@ -1,0 +1,11 @@
+$color-text: rgb(230, 230, 230);
+[theme="true"] {
+  $color-text: rgb(53, 53, 53);
+
+  .text_color {
+    color: $color-text;
+  }
+}
+.text_color {
+  color: $color-text;
+}

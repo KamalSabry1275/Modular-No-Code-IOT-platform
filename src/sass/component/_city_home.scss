@@ -1,0 +1,36 @@
+[theme="false"] {
+  .container-house {
+    filter: invert(95%) hue-rotate(180deg);
+    -webkit-filter: invert(95%) hue-rotate(180deg);
+    .house {
+      .bg-fill {
+        filter: invert(100%) hue-rotate(180deg) brightness(150%);
+        -webkit-filter: invert(100%) hue-rotate(180deg) brightness(150%);
+      }
+    }
+  }
+}
+
+.container-house {
+  height: auto;
+  margin: 5rem;
+}
+
+.house {
+  cursor: pointer;
+  font-size: 30px;
+  font-family: "Oak", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+
+  .bg-fill {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+  }
+
+  &:hover,
+  &.active {
+    .bg-fill {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,103 @@
+@import "../../component/mixin/flex";
+@import "../../component/mixin/scrollbar";
+[theme="true"] {
+  .editor_rule {
+    .rule_page {
+      &::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+      }
+
+      .relation-module {
+        background-color: #cbcbcb;
+        color: #303030;
+        .item {
+          color: #000;
+          background-color: #e4e4e4;
+
+          &:autofill {
+            color: #000;
+            box-shadow: 0 0 0 30px #e4e4e4 inset !important;
+          }
+          &:-webkit-autofill {
+            -webkit-text-fill-color: #000;
+            -webkit-box-shadow: 0 0 0 30px #e4e4e4 inset !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.editor_rule {
+  @include flex-align(column, center, start, nowrap);
+  height: 100%;
+  padding: 1rem;
+
+  .header {
+    @include flex-align(row, center, space-between, nowrap);
+    width: 100%;
+  }
+
+  .rule_page {
+    @include flex-align(column, center, start, nowrap);
+    @include scrollbar(0.5rem, 1rem, #888, #303030);
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+
+    .relation-module {
+      position: relative;
+      margin: 1rem;
+      flex-shrink: 0;
+      width: 40rem;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 1.5rem 1rem 1rem;
+      border-radius: 1.5rem;
+      background-color: rgb(57, 57, 57);
+      -webkit-border-radius: 1.5rem;
+      -moz-border-radius: 1.5rem;
+      -ms-border-radius: 1.5rem;
+      -o-border-radius: 1.5rem;
+
+      .item {
+        flex: 1 0 60%;
+        color: #e9e9e9;
+        width: 10rem;
+        background-color: #585858;
+        border-radius: 0.5rem;
+        -webkit-border-radius: 0.5rem;
+        -moz-border-radius: 0.5rem;
+        -ms-border-radius: 0.5rem;
+        -o-border-radius: 0.5rem;
+        padding: 0 0.5rem;
+        border: none;
+        outline: none;
+        box-shadow: none;
+
+        &:autofill {
+          color: #e9e9e9;
+          box-shadow: 0 0 0 30px #585858 inset !important;
+        }
+        &:-webkit-autofill {
+          -webkit-text-fill-color: #e9e9e9;
+          -webkit-box-shadow: 0 0 0 30px #585858 inset !important;
+        }
+      }
+      select {
+        cursor: pointer;
+      }
+
+      .label {
+        flex: 1 0 30%;
+      }
+
+      .title {
+        flex: 1 0 90%;
+        font-weight: bolder;
+      }
+    }
+  }
+}

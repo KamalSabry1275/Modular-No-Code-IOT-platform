@@ -1,0 +1,365 @@
+@import "../../component/mixin/scrollbar";
+
+$bg-color-editor-project-dark: #191919;
+$bg-color-windows-dark: #202020;
+$bg-color-windows-border-dark: rgb(21, 21, 21);
+$bg-color-editor-project-light: #d9d9d9;
+$bg-color-windows-light: #cdcdcd;
+$bg-color-windows-border-light: rgb(184, 184, 184);
+$bg-color-module-light: #dddddd;
+$bg-color-module-text-light: #474747;
+$border-color-module-light: #afafaf;
+$outline-color-module: #626262;
+$bg-color-module-dark: #383838;
+$bg-color-module-text-dark: #cfcfcf;
+$border-color-module-dark: #1d1d1d;
+$color-text-light: #000;
+$color-text-input-light: #000;
+$color-text-dark: #cecece;
+$color-text-input-dark: #e9e9e9;
+$bg-color-input-light: #e4e4e4;
+$bg-color-input-dark: #585858;
+$bg-color-input-disabled-light: #bcbcbc;
+$bg-color-input-disabled-dark: #303030;
+$color-placeholder-input-light: #9e9e9e;
+$color-placeholder-input-dark: #b1b1b1d3;
+$color-placeholder-input-disabled-light: #585858;
+$color-placeholder-input-disabled-dark: #acacac;
+
+[theme="true"] {
+  .editor_project {
+    background-color: $bg-color-editor-project-light;
+
+    select {
+      color: $color-text-input-light;
+      background-color: $bg-color-input-light;
+    }
+  }
+  .header {
+    color: $color-text-light;
+  }
+  .project_page,
+  .collection_modules,
+  .module_properties {
+    &::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+    }
+
+    background-color: $bg-color-windows-light;
+    box-shadow: 0 0 4px 4px $bg-color-windows-border-light;
+  }
+
+  .project_page .container_modules {
+    &::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+    }
+  }
+
+  :is(.project_page, .collection_modules) .module {
+    color: $bg-color-module-text-light;
+    background-color: $bg-color-module-light;
+    border: 4px solid $border-color-module-light;
+  }
+  .module_properties {
+    .properties_module {
+      h2 {
+        color: $color-text-light;
+      }
+
+      div {
+        color: $color-text-light;
+        input {
+          &:autofill {
+            color: $color-text-input-light;
+            box-shadow: 0 0 0 30px $bg-color-input-light inset !important;
+          }
+          &:-webkit-autofill {
+            -webkit-text-fill-color: $color-text-input-light;
+            -webkit-box-shadow: 0 0 0 30px $bg-color-input-light inset !important;
+          }
+
+          &::placeholder {
+            color: $color-placeholder-input-light;
+          }
+          &[disabled] {
+            &::placeholder {
+              color: $color-placeholder-input-disabled-light;
+            }
+            background-color: $bg-color-input-disabled-light;
+          }
+          color: $color-text-input-light;
+          background-color: $bg-color-input-light;
+          border: 0.12rem solid #717171;
+        }
+        select {
+          &:disabled {
+            color: $color-placeholder-input-disabled-light;
+            background-color: $bg-color-input-disabled-light;
+          }
+        }
+      }
+    }
+  }
+}
+
+.editor_project {
+  padding: 1rem;
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "collectionModules projectPage ModuleProparties";
+  grid-template-rows: 3rem 1fr;
+  grid-template-columns: 20rem 1fr 25rem;
+  background-color: $bg-color-editor-project-dark;
+
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 5;
+
+  select {
+    color: $color-text-input-dark;
+    background-color: $bg-color-input-dark;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+    padding: 0 0.5rem;
+  }
+}
+
+.header {
+  grid-area: header;
+  padding: 0.2rem 1rem;
+  color: $color-text-dark;
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  height: fit-content;
+
+  h2 {
+    display: flex;
+    width: 50%;
+    font-size: 2rem;
+    cursor: default;
+    label {
+      margin-right: 0.5rem;
+      max-width: 50%;
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+.project_page {
+  grid-area: projectPage;
+  background-color: $bg-color-windows-dark;
+  margin: 10px;
+  padding: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 4px 4px $bg-color-windows-border-dark;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+
+  .container_modules {
+    @include scrollbar(0.5rem, 1rem, #888, #303030);
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    gap: 0.5rem;
+    padding: 10px;
+
+    .module {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .space {
+      width: 100%;
+      height: 0.5rem;
+      background-color: red;
+    }
+  }
+  transition: none;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+}
+
+.collection_modules {
+  @include scrollbar(0.5rem, 1rem, #888, #303030);
+
+  grid-area: collectionModules;
+  background-color: $bg-color-windows-dark;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0 0 4px 4px $bg-color-windows-border-dark;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  gap: 0.3rem;
+}
+
+.module_properties {
+  grid-area: ModuleProparties;
+  background-color: $bg-color-windows-dark;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0 0 4px 4px $bg-color-windows-border-dark;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  .properties_module {
+    width: 90%;
+    margin: 0.5rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .module_pins {
+      display: flex;
+      flex-direction: column;
+    }
+
+    h2 {
+      margin-bottom: 2rem;
+      text-align: center;
+      color: $color-text-dark;
+    }
+
+    div {
+      width: 100%;
+      margin: 0.2rem 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      color: $color-text-dark;
+      margin: 0.4rem 0;
+
+      label {
+        text-transform: capitalize;
+        white-space: nowrap;
+        padding: 0 0.4rem;
+        font-size: 1.1rem;
+      }
+
+      :is(input, select) {
+        width: 10rem;
+      }
+
+      input {
+        outline: none;
+        &:autofill {
+          color: $color-text-input-dark;
+          box-shadow: 0 0 0 30px $bg-color-input-dark inset !important;
+        }
+        &:-webkit-autofill {
+          -webkit-text-fill-color: $color-text-input-dark;
+          -webkit-box-shadow: 0 0 0 30px $bg-color-input-dark inset !important;
+        }
+
+        &::placeholder {
+          color: $color-placeholder-input-dark;
+        }
+
+        &[disabled] {
+          &::placeholder {
+            color: $color-placeholder-input-disabled-dark;
+          }
+
+          border: none;
+          background-color: $bg-color-input-disabled-dark;
+        }
+
+        color: $color-text-input-dark;
+        background-color: $bg-color-input-dark;
+        border: 0.12rem solid #afafaf;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        -webkit-border-radius: 0.5rem;
+        -moz-border-radius: 0.5rem;
+        -ms-border-radius: 0.5rem;
+        -o-border-radius: 0.5rem;
+      }
+
+      select {
+        padding: 0.5rem;
+        cursor: pointer;
+        &:disabled {
+          cursor: default;
+          color: $color-placeholder-input-disabled-dark;
+          background-color: $bg-color-input-disabled-dark;
+          border: none;
+        }
+      }
+
+      p {
+        text-align: justify;
+
+        & > strong {
+          color: red;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+:is(.project_page, .collection_modules) .module {
+  color: $bg-color-module-text-dark;
+  background-color: $bg-color-module-dark;
+  border: 4px solid $border-color-module-dark;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+// .project_page .module {
+//   width: 250px;
+//   aspect-ratio: 3/1;
+//   text-align: center;
+//   padding: 5px;
+//   margin: 10px auto;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   cursor: pointer;
+// }
+
+.project_page .module.focus {
+  outline: 5px double $outline-color-module;
+}
+
+.collection_modules .module {
+  cursor: all-scroll;
+}
+
+.dragging {
+  opacity: 0.5;
+}

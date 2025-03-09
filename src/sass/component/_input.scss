@@ -1,0 +1,235 @@
+$PIMARY_COLOR: rgb(241, 241, 241);
+$FORM_COLOR: rgb(217, 217, 217);
+$NAVBAR_COLOR: rgba(215, 215, 215, 0.9);
+$AUTO_FILL_COLOR_LIGHT: rgb(229, 229, 229);
+$AUTO_FILL_COLOR_DARK: rgb(67, 67, 67);
+$AUTH_FILL_TEXT_COLOR_LIGHT: black;
+$AUTH_FILL_TEXT_COLOR_DARK: white;
+$bg-color-googleBtn-light: #f1f1f1;
+$bg-color-hover-googleBtn-light: #dfdfdf;
+$color-border-googleBtn-light: #888888;
+$bg-color-googleBtn-dark: #f3f3f3;
+$bg-color-hover-googleBtn-dark: #292929;
+$color-border-googleBtn-light: #888888;
+
+[theme="true"] {
+  form::before {
+    color: rgb(95, 95, 95);
+    text-shadow: none;
+  }
+
+  .login_btn {
+    background-color: $bg-color-googleBtn-light !important;
+    border-color: $color-border-googleBtn-light !important;
+    &:hover {
+      background-color: $bg-color-hover-googleBtn-light !important;
+    }
+  }
+
+  .field_input {
+    background-color: $PIMARY_COLOR;
+  }
+
+  .field_input {
+    outline-color: $PIMARY_COLOR;
+  }
+
+  .field_input label {
+    color: black !important;
+  }
+
+  .field_form input:focus + label,
+  .field_form input:not([value=""]) + label {
+    background-color: $PIMARY_COLOR;
+  }
+
+  .field_form {
+    input {
+      &:autofill {
+        color: $AUTH_FILL_TEXT_COLOR_LIGHT;
+        box-shadow: 0 0 0 30px $AUTO_FILL_COLOR_LIGHT inset !important;
+      }
+
+      &:-webkit-autofill {
+        -webkit-text-fill-color: $AUTH_FILL_TEXT_COLOR_LIGHT;
+        -webkit-box-shadow: 0 0 0 30px $AUTO_FILL_COLOR_LIGHT inset !important;
+      }
+      color: #191919;
+    }
+
+    .password .container-progress .progress {
+      background-color: #dedede;
+    }
+  }
+}
+
+:root {
+  --width-input: 22rem;
+  --height-input: 2.2rem;
+  --height-input-password: var(--height-input);
+  --width-form: 24rem;
+}
+
+.field_form {
+  width: var(--width-form);
+  height: calc(var(--height-input) + 1.8rem);
+  display: flex;
+  background: transparent;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem;
+  margin: 0.5rem 0.2rem;
+
+  input {
+    padding: 0.2rem;
+    font-size: 1.1rem;
+    width: var(--width-input);
+    height: var(--height-input);
+    margin: 0 0.5rem;
+    background-color: transparent;
+    color: white;
+    border: 0.1rem solid #191919;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem #191919;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+
+    &:autofill {
+      color: $AUTH_FILL_TEXT_COLOR_DARK;
+      box-shadow: 0 0 0 30px $AUTO_FILL_COLOR_DARK inset !important;
+    }
+
+    &:-webkit-autofill {
+      -webkit-text-fill-color: $AUTH_FILL_TEXT_COLOR_DARK;
+      -webkit-box-shadow: 0 0 0 30px $AUTO_FILL_COLOR_DARK inset !important;
+    }
+  }
+
+  input ~ label {
+    position: absolute;
+    text-transform: capitalize;
+    color: white;
+    opacity: 0.8;
+    font-size: 1.1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    left: 1rem;
+    top: 50%;
+    cursor: text;
+    transition: 0.25s ease-in-out;
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -ms-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+  }
+
+  input:focus + label,
+  input:not([value=""]) + label {
+    color: gold;
+    background-color: #363636;
+    opacity: 1;
+    padding: 0 0.2rem;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    top: -0.2rem;
+    left: 0.5rem;
+  }
+
+  input::placeholder {
+    text-transform: capitalize;
+  }
+
+  .password {
+    margin: 0.5rem;
+    font-size: 1rem;
+    width: var(--width-input);
+  }
+
+  .password .container-progress {
+    width: var(--width-input);
+    margin: 0.5rem 0 0 0.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .password .container-progress .progress {
+    width: calc(var(--width-input) - 4rem);
+    background-color: #656565;
+    height: 0.5rem;
+  }
+  /* 
+     .password .container-progress .progressbar .progressing {
+      height: 100%;
+      transition: all 0.5s ease;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+    }*/
+
+  .password .container-progress h5 {
+    margin: auto;
+    font-size: 0.9rem;
+    font-weight: bolder;
+  }
+}
+
+.field_form_password {
+  height: calc(var(--height-input) + 3.5rem);
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* .field_form label.light_btn {
+    color: black;
+  } */
+
+.field_form_button {
+  margin: 1rem;
+  height: 3rem;
+}
+
+.field_input {
+  display: flex;
+  width: var(--width-input);
+  height: calc(var(--height-input) + 1rem);
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem;
+  font-size: 1rem;
+  background-color: #363636;
+  border: 0.1rem solid #191919;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem #191919;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+  position: relative;
+  outline: 0.15rem solid gold;
+}
+
+.field_input input {
+  outline: 0;
+  box-shadow: none;
+  border: none;
+}
+
+.field_input div {
+  margin-right: 8px;
+}
+
+.login_btn {
+  &:hover {
+    background: $bg-color-hover-googleBtn-dark !important;
+  }
+}

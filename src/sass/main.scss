@@ -1,0 +1,146 @@
+// pages
+@use "./pages/projects_page";
+@use "./pages/form";
+@use "./pages/home";
+@use "./pages/live-projcets";
+
+// pages -> editor
+@use "./pages/editor/editor";
+@use "./pages/editor/editor_project";
+@use "./pages/editor/editor_rule";
+@use "./pages/editor/editor_safety";
+
+// components
+@use "./component/input";
+@use "./component/check_code";
+@use "./component/button";
+@use "./component/btn_delete";
+@use "./component/error";
+@use "./component/theme";
+@use "./component/city_home";
+@use "./component/pulse_animation";
+@use "./component/text_color";
+@use "./component/loading";
+
+// components -> modules
+@use "./component/modules/text_module";
+@use "./component/modules/btn_module";
+@use "./component/modules/num_module";
+@use "./component/modules/range_module";
+
+$PIMARY_COLOR: #d9d9d9;
+$bg-color-form: rgb(226, 226, 226);
+$FORM_COLOR: rgb(238, 238, 238);
+$NAVBAR_COLOR: rgba(215, 215, 215, 0.9);
+$navbar-shadow: rgb(184, 184, 184);
+
+[theme="true"] {
+  .App,
+  .container {
+    background-color: $PIMARY_COLOR;
+    color: rgb(59, 59, 59);
+  }
+
+  form {
+    background-color: $bg-color-form;
+  }
+
+  form {
+    box-shadow: 0 0 0.5rem $FORM_COLOR;
+    z-index: 2;
+  }
+
+  form .login_btn {
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .navbar label {
+    color: black !important;
+  }
+
+  .navbar {
+    background-color: $NAVBAR_COLOR !important;
+    box-shadow: 0 0 4px 4px $navbar-shadow;
+  }
+}
+
+form .login_btn {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.wave_bottom {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+.wave_top {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.container {
+  color: $PIMARY_COLOR;
+}
+
+.navbar label {
+  cursor: pointer;
+  position: relative;
+}
+
+.navbar .label_check::before {
+  content: "";
+  width: 90%;
+  height: 0.3rem;
+  position: absolute;
+  background-color: #ffffff30;
+  border-radius: calc(infinity * 1px);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -webkit-border-radius: calc(infinity * 1px);
+  -moz-border-radius: calc(infinity * 1px);
+  -ms-border-radius: calc(infinity * 1px);
+  -o-border-radius: calc(infinity * 1px);
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
+
+[theme="true"] {
+  .navbar .label_check::before {
+    background-color: #00000030;
+  }
+  @media (max-width: 1050px) {
+    .navbar::before {
+      background-color: #d9d9d9;
+      color: #000;
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  .navbar::before {
+    content: "Work only on desktop";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #191919;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    color: #cecece;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+}

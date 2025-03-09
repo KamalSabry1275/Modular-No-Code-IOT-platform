@@ -1,0 +1,12 @@
+form .invalid_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form .invalid_form li {
+  list-style-type: "X";
+  padding-inline-start: 1ch;
+  color: red;
+}

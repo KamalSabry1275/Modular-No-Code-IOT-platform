@@ -1,0 +1,16 @@
+@use "./container_shape";
+@import "../mixin/flex";
+
+.module {
+  .text {
+    @include flex-align($vl: center, $hl: center);
+
+    font-weight: 900;
+    font-size: 3rem;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    padding: 0.5rem;
+    margin: auto;
+  }
+}

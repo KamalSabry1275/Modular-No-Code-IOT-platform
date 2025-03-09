@@ -1,0 +1,121 @@
+[theme="true"] .camera_module {
+  background-color: #cbcbcb;
+
+  .title {
+  }
+  .container_checkbox {
+    span {
+      background-color: #858585;
+      span {
+        background-color: rgb(66, 66, 66);
+      }
+    }
+    .checkbox {
+    }
+  }
+  select {
+    color: #000;
+    background-color: #e4e4e4;
+  }
+}
+
+.camera_module {
+  background-color: rgb(57, 57, 57);
+  padding: 1rem 3rem;
+  color: white;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas: "title title checkbox" "properityName properityValue properityValue";
+  gap: 1rem;
+  .title {
+    grid-area: title;
+    cursor: default;
+  }
+  .container_checkbox {
+    grid-area: checkbox;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.2rem;
+
+    input[type="checkbox"] {
+      cursor: pointer;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: 2;
+    }
+    label {
+      font-weight: 600;
+      width: 1.8rem;
+    }
+    span {
+      position: absolute;
+      display: block;
+      width: 1.5rem;
+      aspect-ratio: 2 / 1;
+      background-color: #4f4f4f;
+      border-radius: calc(infinity * 1px);
+      -webkit-border-radius: calc(infinity * 1px);
+      -moz-border-radius: calc(infinity * 1px);
+      -ms-border-radius: calc(infinity * 1px);
+      -o-border-radius: calc(infinity * 1px);
+      span {
+        position: absolute;
+        left: -10%;
+        top: 50%;
+        display: block;
+        width: 1rem;
+        aspect-ratio: 1 / 1;
+        background-color: rgb(158, 158, 158);
+        border-radius: 50%;
+        transform: translate(0, -50%);
+        -webkit-transform: translate(0, -50%);
+        -moz-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+        -o-transform: translate(0, -50%);
+        transition: left 0.3s ease;
+        -webkit-transition: left 0.3s ease;
+        -moz-transition: left 0.3s ease;
+        -ms-transition: left 0.3s ease;
+        -o-transition: left 0.3s ease;
+      }
+    }
+    input[type="checkbox"]:checked ~ span {
+      span {
+        left: 45%;
+      }
+    }
+    input[type="checkbox"]:not(:checked) ~ label:nth-of-type(1) {
+      color: red;
+    }
+    input[type="checkbox"]:checked ~ label:nth-of-type(2) {
+      color: rgb(2, 161, 2);
+    }
+  }
+  label {
+    grid-area: properityName;
+  }
+  select {
+    cursor: pointer;
+    grid-area: properityValue;
+    color: #e9e9e9;
+    padding: 0.5rem;
+    width: 10rem;
+    background-color: #585858;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+    padding: 0 0.5rem;
+  }
+}

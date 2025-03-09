@@ -1,0 +1,29 @@
+$bg-color-dark: #191919;
+$bg-color-light: #d9d9d9;
+$bg-color-card-light: #f3f3f3;
+
+[theme="true"] {
+  .page_module {
+    background-color: $bg-color-light;
+  }
+}
+
+.page_module {
+  width: 100%;
+  height: 100%;
+  padding-top: 2rem;
+  overflow: hidden;
+  background-color: $bg-color-dark;
+  .sensor-title {
+    display: flex;
+    .btn-add_module {
+      background-color: transparent;
+      border: none;
+      color: black;
+      text-transform: capitalize;
+      font-weight: 600;
+      margin-left: 0.5rem;
+      outline: none;
+    }
+  }
+}
