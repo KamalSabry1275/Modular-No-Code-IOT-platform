@@ -51,7 +51,7 @@ Users can register using:
 - **Normal Registration:** Enter username, email, and password.
 - **Google OAuth 2.0:** Register using a Google account.
 
-![alt text](image.png)
+![alt text](image-11.png)
 
 ### Email Activation
 
@@ -100,6 +100,9 @@ Users can log out, which clears their session and redirects them to the login pa
 ### Project Page
 
 - Users can **create new projects**.
+
+![alt text](image-12.png)
+
 - Edit project details (name, description, controller type).
 - Delete projects.
 - Access detailed project views for module and rule management.
