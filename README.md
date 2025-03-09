@@ -1,71 +1,179 @@
-# Getting Started with Create React App
+# IoT Project Management Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the **IoT Project Management Application** repository! This project provides a comprehensive platform for managing IoT projects, modules, and real-time control.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Introduction](#introduction)
+- [Features](#features)
+- [Authentication System](#authentication-system)
+  - [Registration](#registration)
+  - [Email Activation](#email-activation)
+  - [Login](#login)
+  - [Reset Password](#reset-password)
+  - [Logout](#logout)
+- [Pages Overview](#pages-overview)
+  - [Home Page](#home-page)
+  - [Module Page](#module-page)
+  - [Project Page](#project-page)
+  - [Edit Project Page](#edit-project-page)
+  - [Edit Rule Page](#edit-rule-page)
+  - [Edit Image Page](#edit-image-page)
+  - [Edit Safety Page](#edit-safety-page)
+  - [Live Control Page](#live-control-page)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Introduction
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The **IoT Project Management Application** is a web-based platform that enables users to create, manage, and control IoT projects. It provides features such as module configuration, rule creation, real-time control, and safety settings. The application is designed to be user-friendly, secure, and scalable.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **Authentication System:** Secure user registration, login, and password management.
+- **Project Management:** Create, edit, and delete IoT projects.
+- **Module Configuration:** Add, edit, and rearrange modules within projects.
+- **Rule Creation:** Define rules for module interactions.
+- **Real-Time Control:** Monitor and control modules in real-time using Socket.IO.
+- **Safety Settings:** Configure safety modules like camera activation and pin settings.
+- **Image Management:** Upload, view, and delete project-related images.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Authentication System
 
-### `npm run build`
+### Registration
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Users can register using:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Normal Registration:** Enter username, email, and password.
+- **Google OAuth 2.0:** Register using a Google account.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Email Activation
 
-### `npm run eject`
+After registration, users must verify their email by entering a verification code sent to their inbox.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Login
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Users can log in using:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Normal Login:** Enter email and password.
+- **Google OAuth 2.0:** Log in using a Google account.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Reset Password
 
-## Learn More
+If a user forgets their password, they can reset it by:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Entering their email.
+2. Verifying their identity with a code sent to their email.
+3. Setting a new password.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Logout
 
-### Code Splitting
+Users can log out, which clears their session and redirects them to the login page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Pages Overview
 
-### Analyzing the Bundle Size
+### Home Page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Provides an overview of the IoT platform.
+- Includes a description of the platform's features.
+- Displays team member introductions.
 
-### Making a Progressive Web App
+### Module Page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Users can view their modules in **grid view** or **list view**.
+- Selected view style is saved in local storage for consistency across sessions.
 
-### Advanced Configuration
+### Project Page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Users can **create new projects**.
+- Edit project details (name, description, controller type).
+- Delete projects.
+- Access detailed project views for module and rule management.
 
-### Deployment
+### Edit Project Page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Allows users to **add, edit, and rearrange modules**.
+- Configure module properties (e.g., pin settings).
+- Save changes to the project.
 
-### `npm run build` fails to minify
+### Edit Rule Page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# Modular-No-Code-IOT-platform
+- Users can **add new rules** to define module interactions.
+- Edit or delete existing rules.
+- Save rule changes.
+
+### Edit Image Page
+
+- Users can:
+  - Upload new images (via file upload or camera capture).
+  - View and delete existing images.
+
+### Edit Safety Page
+
+- Enable or disable the **camera safety module**.
+- Configure **pin settings** for the camera module.
+
+### Live Control Page
+
+- Provides **real-time control** and monitoring of IoT modules.
+- Users can:
+  - Connect or disconnect from the WebSocket server.
+  - View and control module states in real-time.
+  - Switch between projects to manage different sets of modules.
+
+## Installation
+
+To set up the project locally, follow these steps:
+
+### Clone the repository:
+
+```bash
+git clone https://github.com/your-username/iot-project-management.git
+cd iot-project-management
+```
+
+### Install dependencies:
+
+```bash
+npm install
+```
+
+### Set up environment variables:
+
+Create a `.env` file in the root directory and add the following:
+
+```plaintext
+PORT=3000
+DATABASE_URL=your-database-url
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+JWT_SECRET=your-jwt-secret
+```
+
+### Run the application:
+
+```bash
+npm start
+```
+
+### Access the application:
+
+Open your browser and navigate to `http://localhost:3000`.
+
+## Usage
+
+1. Register or log in to access the platform.
+2. Create a new project from the **Projects Page**.
+3. Add modules, configure rules, and upload images as needed.
+4. Use the **Live Control Page** to monitor and control your IoT modules in real-time.
+
+## Contributing
+
+We welcome contributions! If you'd like to contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Commit your changes.
+4. Submit a pull request.
