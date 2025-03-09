@@ -49,6 +49,8 @@ Users can register using:
 - **Normal Registration:** Enter username, email, and password.
 - **Google OAuth 2.0:** Register using a Google account.
 
+![alt text](image.png)
+
 ### Email Activation
 
 After registration, users must verify their email by entering a verification code sent to their inbox.
